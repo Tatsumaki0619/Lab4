@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 /**
- * Write a description of class Lab4TemperatureProblem here.
+ * This program can convert and print out the temperature using a different unit(Fahr ot Cels)
+ * based on the input temperature and the temperature units the user entered.
+ * This program allows the user to restart and calculate mutiple temperatures if the user answers "yes".
  *
  * @author Qianyi Li
  * @version v1.0
@@ -22,12 +24,14 @@ public class Lab4TemperatureProblem
             inputValue = keyboard.nextInt();
             temp = keyboard.next();// if use nextLine();
             unit = temp.toUpperCase().charAt(0);// the String will be " (Space)Letter"(two char)
+            
             while(!(unit == 'C' || unit == 'F'))//while(unit != 'C' && unit != 'F') also works
             {
                 System.out.println("Please input 'F' or 'C'.");
                 temp = keyboard.next();
                 unit = temp.charAt(0);
             }
+            
             if(unit == 'F'){
                 temperature = (inputValue - 32) * 5 / 9;
                 unit = 'C';
@@ -36,8 +40,10 @@ public class Lab4TemperatureProblem
                 temperature = inputValue * 9 / 5 + 32;
                 unit = 'F';
             }
+            
             System.out.printf("%.1f %c.\n", temperature, unit);
             System.out.print("Enter yes to calculate another one.");
+            
         }while(keyboard.next().equalsIgnoreCase("yes"));
     }
 }

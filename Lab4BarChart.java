@@ -1,9 +1,14 @@
 import java.util.Random;
+
 /**
- * Write a description of class Lab4BarChart here.
+ * This program will generate three random integers(from 1 to 999)
+ * The program will print them out and print certain number of "*"
+ * representing each number's hundred's value. If the number will is small than
+ * 100. The the program will print out" <100 no stars".
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Qianyi Li
+ * @version v1.0
+ * @since 3/2/2025
  */
 public class Lab4BarChart
 {
@@ -21,22 +26,24 @@ public class Lab4BarChart
         printStars(random2);
         printStars(random3);
     }
-/**
- * 
- */
+
+    /**
+     * This is a method to generate random number and return it ot main method.
+     */
     public static int randomNumber()
     {
         Random random = new Random();
         int randomNumber = random.nextInt(999);
         return randomNumber;
     }
-/**
- * 
- */
+
+    /**
+     * This is a method that can print out "*" for the number's hundred's value.
+     */
     public static void printStars(int input){
         if(input <= 100){
             System.out.println("The number is smaller than 100," 
-            + "no stars printed ");
+                + "no stars printed ");
         }
         else{
             int temp = input % 100;

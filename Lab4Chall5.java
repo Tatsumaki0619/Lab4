@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
  * This program helps the user to count how many letters the user inputs
  * from the string the user provided. The user need to input a 
  * string(a sentence) and a letter. The program will tell the number
- * of the letter as am output. 
+ * of the letter as an output. 
  *
  * @author Qianyi Li
  * @version v1.0
