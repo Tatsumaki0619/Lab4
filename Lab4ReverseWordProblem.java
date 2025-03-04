@@ -39,11 +39,8 @@ public class Lab4ReverseWordProblem
                 }
                 
                 word = keyboard.next().toLowerCase();
-                
             }
-            
-            System.out.print("input yes to start again.");
-            
+            System.out.print("input yes to start again: ");
         }while(keyboard.next().equalsIgnoreCase("yes"));
     }
 }

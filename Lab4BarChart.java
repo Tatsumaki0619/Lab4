@@ -1,57 +1,43 @@
 import java.util.Random;
 
 /**
- * This program will generate three random integers(from 1 to 999)
- * The program will print them out and print certain number of "*"
- * representing each number's hundred's value. If the number will is small than
- * 100. The the program will print out" <100 no stars".
+ * Write a description of class Lab4BarChart here.
  *
- * @author Qianyi Li
- * @version v1.0
- * @since 3/2/2025
+ * @author (your name)
+ * @version (a version number or a date)
  */
 public class Lab4BarChart
 {
-    public static void main(String []args)
-    {
-        int random1, random2, random3;
-        random1 = randomNumber();
-        random2 = randomNumber();
-        random3 = randomNumber();
-        System.out.println("Number 1 is: " + random1);
-        System.out.println("Number 2 is: " + random2);
-        System.out.println("Number 3 is: " + random3);
-        System.out.println();
-        printStars(random1);
-        printStars(random2);
-        printStars(random3);
+    public static void main(String[] args){
+        int first, second, third;
+        Random generator = new Random();
+        
+        first = generator.nextInt(1000);
+        second = generator.nextInt(1000);
+        third = generator.nextInt(1000);
+        System.out.println("The first number is " + first);
+        System.out.println("The second number is " + second);
+        System.out.println("The third number is " + third);
+        System.out.println("");
+        
+        System.out.println("NUMBER BAR CHART");
+        
+        System.out.print("Number 1: ");
+        printStars(first);
+        System.out.print("Number 2: ");
+        printStars(second);
+        System.out.print("Number 3: ");
+        printStars(third);
     }
-
-    /**
-     * This is a method to generate random number and return it ot main method.
-     */
-    public static int randomNumber()
-    {
-        Random random = new Random();
-        int randomNumber = random.nextInt(999);
-        return randomNumber;
-    }
-
-    /**
-     * This is a method that can print out "*" for the number's hundred's value.
-     */
     public static void printStars(int input){
-        if(input <= 100){
-            System.out.println("The number is smaller than 100," 
-                + "no stars printed ");
+        if(input < 100){
+            System.out.println("< 100.");
         }
         else{
-            int temp = input % 100;
-            int starNumber = (input - temp)/100;
-            for(int i = 1; i <= starNumber; i++){
+            for(int i = 1;i <= input / 100; i++){
                 System.out.print("*");
             }
-            System.out.println();
+            System.out.println("");
         }
     }
 }
